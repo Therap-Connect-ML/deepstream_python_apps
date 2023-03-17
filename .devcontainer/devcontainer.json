@@ -1,0 +1,39 @@
+{
+    "name": "pyds",
+    "initializeCommand": "xhost +",
+    "build": {
+        "context": "..",
+        "dockerfile": "Dockerfile",
+        "args": {
+            "BUILDKIT_INLINE_CACHE": "1"
+        }
+    },
+    "containerEnv": {
+        "DISPLAY": "${localEnv:DISPLAY}"
+    },
+    "runArgs": [
+        "--name=pyds",
+        "--gpus=all",
+        "--net=host",
+        "--privileged",
+        "-v",
+        "/tmp/.X11-unix:/tmp/.X11-unix",
+        "-v",
+        "/var/run/docker.sock:/var/run/docker.sock"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "esbenp.prettier-vscode",
+                "ms-python.black-formatter",
+                "vscode-icons-team.vscode-icons",
+                "GitHub.github-vscode-theme",
+                "GitHub.vscode-pull-request-github",
+                "ms-python.isort"
+            ]
+        }
+    }
+}
