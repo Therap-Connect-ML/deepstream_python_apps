@@ -1,6 +1,5 @@
 {
     "name": "pyds",
-    "initializeCommand": "xhost +",
     "build": {
         "context": "..",
         "dockerfile": "Dockerfile",
@@ -8,19 +7,17 @@
             "BUILDKIT_INLINE_CACHE": "1"
         }
     },
-    "containerEnv": {
-        "DISPLAY": "${localEnv:DISPLAY}"
-    },
     "runArgs": [
+        "-it",
+        "--rm",
         "--name=pyds",
         "--gpus=all",
         "--net=host",
-        "--privileged",
-        "-v",
-        "/tmp/.X11-unix:/tmp/.X11-unix",
-        "-v",
-        "/var/run/docker.sock:/var/run/docker.sock"
+        "--privileged=true",
+        "--runtime=nvidia"
     ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/opt/nvidia/deepstream/deepstream/sources/deepstream_python_apps,type=bind", 
+    "workspaceFolder": "/opt/nvidia/deepstream/deepstream/sources/deepstream_python_apps",
     "customizations": {
         "vscode": {
             "extensions": [
