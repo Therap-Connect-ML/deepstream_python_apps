@@ -28,6 +28,7 @@
 #include "pybind11/stl.h"
 #include "gstnvdsmeta.h"
 #include "nvdsmeta.h"
+#include "nvdspreprocess_meta.h"
 #include "nvbufsurface.h"
 #include "nvds_latency_meta.h"
 #include "nvdsmeta_schema.h"
@@ -45,6 +46,7 @@
 #include "nvds_analytics_meta.h"
 #include "nvds_360d_meta.h"
 #include "nvds_tracker_meta.h"
+#include "nvds_roi_meta.h"
 
 namespace py = pybind11;
 

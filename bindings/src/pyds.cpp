@@ -23,6 +23,8 @@
 #include "bindnvbufsurface.hpp"
 #include "bindnvdsinfer.hpp"
 #include "bindnvdsmeta.hpp"
+#include "bindnvdspreprocessmeta.hpp"
+#include "bindnvdsroimeta.hpp"
 #include "bindnvosd.hpp"
 #include "bindopticalflow.hpp"
 #include "bindschema.hpp"
@@ -54,6 +56,8 @@ namespace pydeepstream {
 
         bindnvosd(m);
         bindnvdsmeta(m);
+        bindnvdspreprocessmeta(m);
+        bindnvdsroimeta(m);
         bindschema(m);
         bindfunctions(m);
         bindtrackermeta(m);
