@@ -7,15 +7,15 @@ namespace pydsdoc
         namespace NvDsPreProcessTensorMetaDoc
         {
             constexpr const char* descr = R"pyds(
-                Holds information about preprocess tensor metadata in the preprocessed batch meta 
+                Holds information about preprocessed tensor metadata.
                 
                 :ivar raw_tensor_buffer: Holds raw tensor buffer preprocessed for infer.
                 :ivar buffer_size: *int*, Size of raw tensor buffer.
-                :ivar tensor_shape: *vector*, Shape of raw tensor buffer.
-                :ivar data_type: *NvDsDataType*, Model datatype for which tensor prepared.
+                :ivar tensor_shape: *list of int*, Shape of raw tensor buffer.
+                :ivar data_type: :class:`NvDsDataType`, Model datatype for which tensor prepared.
                 :ivar tensor_name: *string*, Model input layer name.
                 :ivar gpu_id: *int*, gpu-id on which tensor prepared.
-                :ivar private_data: Private data used for the meta producer's internal memory management.)pyds";
+                :ivar private_data: *void* Private data used for the meta producer's internal memory management.)pyds";
             
             constexpr const char* cast=R"pyds(cast given object/data to :class:`NvDsPreProcessTensorMeta`, call pyds.NvDsPreProcessTensorMeta.cast(data))pyds";
         }
@@ -23,12 +23,12 @@ namespace pydsdoc
         namespace GstNvDsPreProcessBatchMetaDoc
         {
             constexpr const char* descr = R"pyds(
-                Holds information about preprocess batch metadata in the preprocessed meta
+                Holds information about preprocess batch metadata.
                 
                 :ivar target_unique_ids: *int*, Holds the list of component gie-id for which tensor is prepared.
-                :ivar tensor_meta: Holds a pointer to object of type :class: NvDsPreProcessTensorMeta.
-                :ivar roi_vector: *vector*, Holds the list of RoiMeta per batch.
-                :ivar private_data: Private data used for the meta producer's internal memory management.
+                :ivar tensor_meta: Holds a pointer to object of type :class: `NvDsPreProcessTensorMeta`.
+                :ivar roi_vector: *list of type NvdsRoiMeta*, Holds the list of RoiMeta per batch.
+                :ivar private_data: *void* Private data used for the meta producer's internal memory management.
                 
                 Example Usage:
                 ::

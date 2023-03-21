@@ -34,14 +34,14 @@ namespace pydsdoc
         namespace NvDsRoiMetaDoc
         {          
             constexpr const char* descr = R"pyds(
-                Holds information about roi metadata in the roi_vector of preprocessed batch meta.
+                Holds information about roi metadata.
                 
                 :ivar roi: :class:`NvOSD_RectParams`, Structure containing the positional parameters of the object in the frame.
                 :ivar converted_buffer: :class:`NvBufSurfaceParams`.
                 :ivar frame_meta: An object of type :class:`NvDsFrameMeta`.
                 :ivar object_meta: An object of type :class:`NvDsObjectMeta`.
                 :ivar classifier_meta_list: Holds a pointer to a list of pointers of type :class:`NvDsClassifierMeta`.
-                :ivar roi_user_meta_list: Holds a pointer to a list of pointers of type :class:`NvDsClassifierMeta`.
+                :ivar roi_user_meta_list: Holds a pointer to a list of pointers of type :class:`NvDsUserMeta`.
                 :ivar scale_ratio_x: :class:`gdouble`, Ratio by which the frame/ROI crop was scaled in horizontal direction Required when scaling co-ordinates/sizes in metadata back to input resolution.
                 :ivar scale_ratio_y: :class:`gdouble`, Ratio by which the frame/ROI crop was scaled in vertical direction Required when scaling co-ordinates/sizes in metadata back to input resolution.
                 :ivar offset_left: :class:`gdouble`, offsets in horizontal direction while scaling.                
