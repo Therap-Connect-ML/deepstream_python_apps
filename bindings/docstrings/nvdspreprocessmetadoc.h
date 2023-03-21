@@ -7,7 +7,7 @@ namespace pydsdoc
         namespace NvDsPreProcessTensorMetaDoc
         {
             constexpr const char* descr = R"pyds(
-                Holds information about preprocessed tensor metadata.
+                Holds information about preprocess tensor metadata.
                 
                 :ivar raw_tensor_buffer: Holds raw tensor buffer preprocessed for infer.
                 :ivar buffer_size: *int*, Size of raw tensor buffer.
