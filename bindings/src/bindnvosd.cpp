@@ -412,6 +412,38 @@ namespace pydeepstream {
                      py::return_value_policy::reference,
                      pydsdoc::NvOSD::NvOSD_FrameCircleParams::cast);
 
+
+        py::class_<NvOSD_MaskParams>(m, "NvOSD_MaskParams",
+                                     pydsdoc::NvOSD::NvOSD_MaskParams::descr)
+                .def(py::init<>())
+                .def_readwrite("data", &NvOSD_MaskParams::data)
+                .def_readwrite("size", &NvOSD_MaskParams::size)
+                .def_readwrite("threshold", &NvOSD_MaskParams::threshold)
+                .def_readwrite("width", &NvOSD_MaskParams::width)
+                .def_readwrite("height", &NvOSD_MaskParams::height)
+
+                .def("get_mask_array", 
+                     [](NvOSD_MaskParams &self) -> py::array {
+                         auto dtype = py::dtype(py::format_descriptor<float>::format());
+                         return py::array(dtype, {self.size / sizeof(float)}, {sizeof(float)}, self.data, py::cast(self.data));
+                    },
+                     py::return_value_policy::reference,
+                     pydsdoc::NvOSD::NvOSD_MaskParams::get_mask_array)
+                    
+                .def("cast",
+                     [](void *data) {
+                         return (NvOSD_MaskParams *) data;
+                     },
+                     py::return_value_policy::reference,
+                     pydsdoc::NvOSD::NvOSD_MaskParams::cast)
+
+                .def("cast",
+                     [](size_t data) {
+                         return (NvOSD_MaskParams *) data;
+                     },
+                     py::return_value_policy::reference,
+                     pydsdoc::NvOSD::NvOSD_MaskParams::cast);
+
     }
 
 }

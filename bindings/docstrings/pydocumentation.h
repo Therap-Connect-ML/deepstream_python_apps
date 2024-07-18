@@ -381,6 +381,21 @@ namespace pydsdoc
 
             constexpr const char* cast=R"pyds(cast given object/data to :class:`NvOSD_LineParams`, call pyds.NvOSD_LineParams.cast(data))pyds";
         }
+
+        namespace NvOSD_MaskParams
+        {
+            constexpr const char* descr = R"pyds(
+                Holds the mask parameters of the segment to be overlayed.
+                
+                :ivar data: *float**, Mask buffer.
+                :ivar size: *int*, Size of the mask buffer in bytes.
+                :ivar threshold: *int*, Threshold for binarization.
+                :ivar height: *int*, Mask height.
+                :ivar width: *int*, Mask width.)pyds";
+
+            constexpr const char* get_mask_array=R"pyds(Retrieve mask data as numpy array)pyds";
+            constexpr const char* cast=R"pyds(cast given object/data to :class:`NvOSD_MaskParams`, call pyds.NvOSD_MaskParams.cast(data))pyds";
+        }
     }
     
 
